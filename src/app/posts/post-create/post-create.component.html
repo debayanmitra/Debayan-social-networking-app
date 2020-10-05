@@ -1,7 +1,5 @@
-<mat-form-field>
-  <textarea matInput rows="6"> Input some text </textarea>
-</mat-form-field>
-<button (click)="onAddPost()">Save Post</button>
+<textarea rows="6" #postInput></textarea>
 
+<button (click)="onAddPost(postInput)">Save Post</button>
 <p></p>
 <p>{{ newPost }}</p>
