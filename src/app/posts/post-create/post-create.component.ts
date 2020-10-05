@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-post-create',
-  templateUrl: './post-create.component.html',
-  styleUrls: ['./post-create.component.css'],
+  selector: "app-post-create",
+  templateUrl: "./post-create.component.html",
+  styleUrls: ["./post-create.component.css"],
 })
 export class PostCreateComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
 
-  newPost = '';
+  newPost = "";
 
   onAddPost() {
-    this.newPost = 'this users post';
+    /** alert("Save clicked"); **/
+    this.newPost = "this users post";
   }
 }
