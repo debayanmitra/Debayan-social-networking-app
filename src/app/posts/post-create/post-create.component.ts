@@ -13,8 +13,8 @@ export class PostCreateComponent implements OnInit {
   newPost = "No Content on the new post";
 
   onAddPost(postInput: HTMLTextAreaElement) {
-    /** alert("Save clicked"); **/
-    console.dir(postInput);
-    this.newPost = "this users post";
+    /** alert("Save clicked"); 
+    console.dir(postInput);**/
+    this.newPost = postInput.value;
   }
 }
