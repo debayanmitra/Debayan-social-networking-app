@@ -10,11 +10,12 @@ export class PostCreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  enteredValue = "";
   newPost = "No Content on the new post";
 
-  onAddPost(postInput: HTMLTextAreaElement) {
+  onAddPost() {
     /** alert("Save clicked"); 
     console.dir(postInput);**/
-    this.newPost = postInput.value;
+    this.newPost = this.enteredValue;
   }
 }
