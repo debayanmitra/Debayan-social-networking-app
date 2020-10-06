@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { PostCreateComponent } from "./posts/post-create/post-create.component";
+import { HeaderComponent } from "./header/header/header.component";
 
 @Component({
   selector: "app-root",
