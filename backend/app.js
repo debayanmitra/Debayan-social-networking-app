@@ -3,15 +3,15 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const Post = require("./model/post");
-const path = require('path');
+const path = require("path");
 const mongoose = require("mongoose");
-const postRoutes = require('./routes/posts');
+const postRoutes = require("./routes/posts");
 
 mongoose
-  .connect(
-    "mongodb://localhost:27017/node-angular?retryWrites=true",
-    { useUnifiedTopology: true, useNewUrlParser: true }
-  )
+  .connect("mongodb://localhost:27017/mynewpostdb?retryWrites=true", {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("Connected DB");
   })
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/posts', postRoutes);
+app.use("/api/posts", postRoutes);
 // app.post("/api/posts", (req, res, next) => {
 //   //code accept post request
 //   const post = new Post({
