@@ -2,15 +2,16 @@ const { NgModel } = require("@angular/forms");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const post = require("./model/post");
+const Post = require("./model/post");
 const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false"
+    "mongodb://localhost:27017/mynewpostdb?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false",
+    { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(() => {
-    console.log("connected DB");
+    console.log("Connected DB");
   })
   .catch(() => {
     console.log("Error Connecting DB");
@@ -38,7 +39,14 @@ app.post("/api/posts", (req, res, next) => {
     content: req.body.content,
   });
   console.log(post);
-  post.save();
+  post
+    .save()
+    .then((res) => {
+      console.log("Success = " + res.status);
+    })
+    .catch((errr) => {
+      console.log("errr = " + errr.message);
+    });
 
   res.status(201).json({
     message: "Post added successfully",
