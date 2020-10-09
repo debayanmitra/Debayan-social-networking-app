@@ -54,6 +54,11 @@ export class PostsService {
           title: title,
           content: content,
           imagePath: responseData.post.imagePath,
+
+          // id: responseData.post.id,
+          //   title: responseData.post.title,
+          //   content: responseData.post.content,
+          //   imagePath: responseData.post.imagePath,
         };
 
         this.posts.push(post);
