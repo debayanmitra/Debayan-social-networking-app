@@ -3,6 +3,18 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const post = require("./model/post");
+const mongoose = require("mongoose");
+
+mongoose
+  .connect(
+    "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false"
+  )
+  .then(() => {
+    console.log("connected DB");
+  })
+  .catch(() => {
+    console.log("Error Connecting DB");
+  });
 
 app.use(bodyParser.json());
 
@@ -21,8 +33,13 @@ app.use((req, res, next) => {
 
 app.post("/api/posts", (req, res, next) => {
   //code accept post request
-  const post = req.body;
+  const post = new Post({
+    title: req.body.title,
+    content: req.body.content,
+  });
   console.log(post);
+  post.save();
+
   res.status(201).json({
     message: "Post added successfully",
   });
