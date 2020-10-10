@@ -11,7 +11,7 @@ mongoose
 
   .connect(
     "mongodb+srv://debayan:HLlDnCxxgPkaMS33@cluster0.c44cz.mongodb.net/Social-Media-App?retryWrites=true&w=majority",
-    //"mongodb://localhost:27017/mynewpostdb?retryWrites=true", //for local DB
+    //"mongodb://localhost:27017/mynewpostdb?retryWrites=true", //for local DB //
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
