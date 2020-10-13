@@ -3,6 +3,19 @@
   margin-top: 1rem;
 }
 img {
-  width: 100%;
+  width: 25%;
   height: auto;
+}
+
+.info-text {
+  text-align: center;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.post-image {
+  width: 100%;
+  box-shadow: 1px 1 pm 5 px rgba(0, 0, 0, 0.5);
 }

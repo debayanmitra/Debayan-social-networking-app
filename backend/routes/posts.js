@@ -96,7 +96,7 @@ router.put(
     });
     console.log(post);
     Post.updateOne({ _id: req.params.id }, post).then((result) => {
-      res.status(200).json({ message: "Update successful!" });
+      res.status(200).json({ message: "Post Updated successfully!" });
     });
   }
 );
